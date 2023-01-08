@@ -16,16 +16,21 @@ function calc_occ($array) {
             
             $new_arr[$value]++;
             
+        } else {
+            
+            $new_arr[$value] = 1;
         }
         
-        $new_arr[$value] = 1;
     }
     
-    print_r($new_arr);
+    return $new_arr;
 } 
 
 
-calc_occ([2,43,5,5,12]);
+$output = calc_occ([2,2,43,5,5,12]);
+asort($output);
+$key_arr = array_keys($output);
+print_r($key_arr[0]);
 
 
 ?>
